@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Student : MonoBehaviour
 {
-    static private int Score = 0;
+    static private int Score = 5;
 
     static private bool flag_ = true;
 
@@ -13,6 +13,13 @@ public class Student : MonoBehaviour
     static private float span_ = 3.0f;
 
     static private float time_ = 0.0f;
+
+    static public int GetScore()
+    {
+        int score = Score;
+        Score = 0;
+        return score;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +46,7 @@ public class Student : MonoBehaviour
             {
                 time_ = 0.0f;
 
-                Score--;
+                Score = Mathf.Max(Score - 1, 0);
 
                 Debug.Log("スコア : " + Score.ToString());
             }
@@ -57,7 +64,7 @@ public class Student : MonoBehaviour
 
         //if(null != bullet)
         {
-            Score++;
+            Score += 10;
             Destroy(other);
         }
     }
