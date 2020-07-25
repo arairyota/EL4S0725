@@ -10,28 +10,18 @@ public class Student : MonoBehaviour
 
     [Header("スコアが減るスパン")]
     [SerializeField]
-    private float span = 3.0f;
+    static private float span_ = 3.0f;
 
-    private float time_ = 0.0f;
+    static private float time_ = 0.0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        time_ = 0.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        time_ += UnityEngine.Time.deltaTime;
-
-        if( ( span <= time_) && flag_)
-        {
-            time_ = 0.0f;
-            flag_ = false;
-
-            Score--;
-        }
     }
 
     /// <summary>
@@ -39,22 +29,33 @@ public class Student : MonoBehaviour
     /// /// </summary>
     private void FixedUpdate()
     {
-        flag_ = true;
+        if(flag_)
+        {
+            flag_ = false;
+
+            time_ += UnityEngine.Time.deltaTime;
+
+            if (span_ <= time_)
+            {
+                time_ = 0.0f;
+
+                Score--;
+
+                Debug.Log("スコア : " + Score.ToString());
+            }
+        }
     }
 
-    /// <summary>
-    /// 最後に呼ばれるupdate
-    /// </summary>
     private void LateUpdate()
     {
-        flag_ = false;
+        flag_ = true;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        //var teacher = other.GetComponent<>();
+        //var bullet = other.GetComponent<bullet>();
 
-        //if(null != teacher)
+        //if(null != bullet)
         {
             Score++;
             Destroy(other);

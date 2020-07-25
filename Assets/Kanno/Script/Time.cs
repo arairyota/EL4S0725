@@ -9,8 +9,6 @@ public class Time : MonoBehaviour
     [SerializeField]
     private Text text_ = null;
 
-
-
     private float countTime_ = 0.0f;
 
     // Start is called before the first frame update
