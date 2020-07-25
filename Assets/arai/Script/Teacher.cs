@@ -7,7 +7,8 @@ public class Teacher : MonoBehaviour
     /// <summary>
     /// 飛ばす線の参照
     /// </summary>
-
+    [Header("飛ばす線")]
+    [SerializeField] GameObject Line_ = null;
 
     /// <summary>
     /// FirePoint参照
@@ -38,10 +39,26 @@ public class Teacher : MonoBehaviour
     {
         if(_fireRateCount > FireRate)
         {
-            //弾発射
-            _firePoint.Fire(transform.position, 0);
-
             _fireRateCount = 0.0f;
+
+            foreach (Transform child in Line_.transform)
+            {
+                if (child.GetComponent<KillZone>())
+                {
+                    //弾発射
+                    _firePoint.Fire(transform.position, 1);
+                    return;
+                }
+            }
+
+            {
+                //弾発射
+                _firePoint.Fire(transform.position, 0);
+            }
+
+            
+
+            
         }
 
         _fireRateCount += UnityEngine.Time.deltaTime;

@@ -81,7 +81,7 @@ public class Player : MonoBehaviour
             pos.y = m_Line[m_LineIndexNow].transform.position.y - 0.2f;
             pos.z = -1;
 
-            var killobj = Instantiate(m_KillObject, pos, Quaternion.identity);
+            var killobj = Instantiate(m_KillObject, pos, Quaternion.identity, m_Line[m_LineIndexNow].transform);
         }
     }
 }

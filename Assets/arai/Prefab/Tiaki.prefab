@@ -93,6 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9712b78630162004fb083f5d65a8fee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Line_: {fileID: 0}
   FireRate: 5
 --- !u!114 &8193191618491716907
 MonoBehaviour:
@@ -108,3 +109,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletList_:
   - {fileID: 2907119435386587568, guid: 36f2a76531c3e154993b5d2f5f1372a9, type: 3}
+  - {fileID: 8644263833700292635, guid: 561dc8ac52a0d8348b56eb22c17f4f22, type: 3}
