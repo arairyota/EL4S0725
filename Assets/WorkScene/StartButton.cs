@@ -11,7 +11,7 @@ public class StartButton : MonoBehaviour
     private string m_GameSceneName;
 
     [SerializeField]
-    private Image Texture;
+    private Text Texture;
 
     // Update is called once per frame
     void Update()
@@ -21,7 +21,7 @@ public class StartButton : MonoBehaviour
             SceneManager.LoadScene(m_GameSceneName);
 
         Color c = Texture.color;
-        c.a = Mathf.Sin(Time.time * 2);
+        c.a = Mathf.Sin(Time.time * 3);
         Texture.color = c;
     }
 }
