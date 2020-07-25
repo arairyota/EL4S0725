@@ -25,6 +25,8 @@ public class Teacher : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _firePoint = GetComponent<FirePoint>();
+
         if(_firePoint == null)
         {
             Debug.LogError("FirePointコンポーネントが無ぇ！");
@@ -37,11 +39,11 @@ public class Teacher : MonoBehaviour
         if(_fireRateCount > FireRate)
         {
             //弾発射
-            //_firePoint.Fire()
+            _firePoint.Fire(transform.position, 0);
 
             _fireRateCount = 0.0f;
         }
 
-        _fireRateCount += Time.deltaTime;
+        _fireRateCount += UnityEngine.Time.deltaTime;
     }
 }

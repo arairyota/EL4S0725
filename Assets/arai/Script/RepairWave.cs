@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JyugyouWave : Bullet
+public class RepairWave : Bullet
 {
-  
+   
 }

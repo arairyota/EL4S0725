@@ -16,15 +16,15 @@ public class KillZone : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        //if(other.gameObject.GetComponent<bullet>())
+        if (other.gameObject.GetComponent<JyugyouWave>())
         {
             Destroy(other.gameObject);
             return;
         }
 
-        //if (other.gameObject.GetComponent<fix>())
+        if (other.gameObject.GetComponent<RepairWave>())
         {
             Destroy(other.gameObject);
             Destroy(this.gameObject);

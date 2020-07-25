@@ -23,6 +23,4 @@ public class Bullet : MonoBehaviour
     {
         transform.position += _speed;
     }
-
-    
 }
