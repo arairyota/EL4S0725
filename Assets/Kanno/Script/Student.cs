@@ -58,14 +58,23 @@ public class Student : MonoBehaviour
         flag_ = true;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter2D(Collision2D col)
     {
-        //var bullet = other.GetComponent<bullet>();
+        var bullet = col.gameObject.GetComponent<JyugyouWave>();
 
-        //if(null != bullet)
+        if(null != bullet)
         {
-            Score += 10;
-            Destroy(other);
+            Score += 1;
+            Destroy(col.gameObject);
+        }
+        else
+        {
+            var b = col.gameObject.GetComponent<RepairWave>();
+
+            if (null != b)
+            {
+                Destroy(col.gameObject);
+            }
         }
     }
 }
