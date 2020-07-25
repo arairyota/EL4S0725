@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Student : MonoBehaviour
 {
+    static private int Score = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -14,5 +15,16 @@ public class Student : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //var teacher = other.GetComponent<>();
+
+        //if(null != teacher)
+        {
+            Score++;
+            Destroy(other);
+        }
     }
 }
