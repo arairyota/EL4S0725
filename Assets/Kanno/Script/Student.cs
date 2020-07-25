@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Student : MonoBehaviour
 {
-    static private int Score = 5;
+    static private int Score = 100;
 
     static private bool flag_ = true;
 
@@ -46,7 +46,7 @@ public class Student : MonoBehaviour
             {
                 time_ = 0.0f;
 
-                Score = Mathf.Max(Score - 1, 0);
+                Score += 1;
 
                 Debug.Log("スコア : " + Score.ToString());
             }
@@ -64,7 +64,7 @@ public class Student : MonoBehaviour
 
         if(null != bullet)
         {
-            Score += 1;
+            Score -= 1;
             Destroy(col.gameObject);
         }
         else

@@ -11,7 +11,7 @@ public class Score : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetScore(10);
+        SetScore(Student.GetScore());
     }
     
     public void SetScore(int s)

@@ -29,7 +29,7 @@ public class StartButton : MonoBehaviour
 
 
         Color c = Texture.color;
-        c.a = Mathf.Sin(Time.time * 3);
+        c.a = Mathf.Sin(UnityEngine.Time.time * 3);
         Texture.color = c;
     }
 
